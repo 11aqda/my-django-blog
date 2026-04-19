@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} - 我的技术博客{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2 style="margin-bottom:15px;">{{ article.title }}</h2>
+    <p style="color:#7f8c8d; font-size:14px; margin-bottom:20px;">
+        发布时间：{{ article.created_time|date:"Y-m-d H:i" }}
+    </p>
+    <div style="font-size:16px; line-height:1.8; color:#333;">
+        {{ article.content|linebreaks }}
+    </div>
+    <div style="margin-top:30px; padding-top:15px; border-top:1px solid #eee;">
+        <a href="{% url 'index' %}" style="color:#3498db;">← 返回首页</a>
+    </div>
+</div>
+{% endblock %}
